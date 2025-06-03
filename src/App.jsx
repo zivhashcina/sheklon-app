@@ -1,9 +1,11 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomeScreen from "./HomeScreen";
-import RegisterScreen from "./RegisterScreen";
-import BusinessScreen from "./BusinessScreen";
-import CommunityScreen from "./CommunityScreen";
+import HomeScreen from "./screens/HomeScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import CommunityScreen from "./screens/CommunityScreen";
+import BusinessScreen from "./screens/BusinessScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/register" element={<RegisterScreen />} />
-        <Route path="/business" element={<BusinessScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
         <Route path="/community" element={<CommunityScreen />} />
+        <Route path="/business" element={<BusinessScreen />} />
       </Routes>
     </Router>
   );
