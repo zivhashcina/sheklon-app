@@ -1,12 +1,24 @@
+// src/App.jsx
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import LoginScreen from "./screens/LoginScreen";
+import CommunityScreen from "./screens/CommunityScreen";
+import BusinessScreen from "./screens/BusinessScreen";
 
-export default function CommunityScreen() {
+function App() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-purple-50 p-6">
-      <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-xl text-center">
-        <h1 className="text-3xl font-bold text-purple-700 mb-4">🤝 אזור קהילה</h1>
-        <p className="text-gray-600">ברוכים הבאים למרחב הקהילתי של שקלון — פורומים פתוחים, הודעות, משימות משותפות ועוד 🌐</p>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/register" element={<RegisterScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/community" element={<CommunityScreen />} />
+        <Route path="/business" element={<BusinessScreen />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
