@@ -1,7 +1,8 @@
-export default function App() {
-  return (
-    <div className="p-6 text-center text-xl font-bold">
-      ברוך הבא לשקלון 🎉
-    </div>
-  );
+import React from "react";
+import HomeScreen from "./HomeScreen";
+
+function App() {
+  return <HomeScreen />;
 }
+
+export default App;
