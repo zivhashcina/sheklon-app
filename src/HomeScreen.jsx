@@ -2,24 +2,44 @@ import React from "react";
 
 export default function HomeScreen() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex flex-col items-center justify-center p-6 text-center">
-      <h1 className="text-4xl font-extrabold text-blue-700 mb-2">ברוכים הבאים לשקלון 💠</h1>
-      <p className="text-gray-600 text-lg mb-6">הקהילה שלך, הערך שלך</p>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-teal-100 p-6 animate-fadeIn transition-all duration-1000 ease-out">
+      {/* לוגו */}
+      <img
+        src="/logo.png"
+        alt="שקלון לוגו"
+        className="w-24 h-24 mb-4 animate-bounce"
+      />
 
-      <div className="grid gap-4 w-full max-w-xs">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl text-lg shadow-md transition-all">
+      {/* כותרת מרכזית */}
+      <h1 className="text-3xl font-extrabold text-gray-800 mb-2 text-center">
+        ברוכים הבאים לקהילת שקלון 🎉
+      </h1>
+
+      {/* טקסט משיכה */}
+      <p className="text-gray-600 text-center mb-6">
+        🌟 הצטרפו למהפכה הכלכלית המקומית – צברו שקלונים, פדו קופונים, ותמכו בעסקים שבאמת חשובים לכם!
+      </p>
+
+      {/* כפתורי ניווט */}
+      <div className="space-y-3 w-full max-w-xs">
+        <button className="w-full bg-blue-600 text-white py-3 rounded-xl shadow hover:bg-blue-700 transition">
           📝 הרשמה
         </button>
-        <button className="bg-green-600 hover:bg-green-700 text-white py-3 rounded-2xl text-lg shadow-md transition-all">
+        <button className="w-full bg-green-600 text-white py-3 rounded-xl shadow hover:bg-green-700 transition">
           🔐 כניסה
         </button>
-        <button className="bg-yellow-500 hover:bg-yellow-600 text-white py-3 rounded-2xl text-lg shadow-md transition-all">
+        <button className="w-full bg-yellow-500 text-white py-3 rounded-xl shadow hover:bg-yellow-600 transition">
           🏪 עסקים
         </button>
-        <button className="bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-2xl text-lg shadow-md transition-all">
+        <button className="w-full bg-purple-600 text-white py-3 rounded-xl shadow hover:bg-purple-700 transition">
           🤝 אזור קהילה
         </button>
       </div>
+
+      {/* טקסט משלים */}
+      <p className="mt-6 text-sm text-gray-700 text-center italic">
+        חזרו כל יום ותראו את ההשפעה שלכם – פרסים, סטטוסים, ואימפקט חברתי אמיתי ✨
+      </p>
     </div>
   );
 }
