@@ -1,63 +1,49 @@
-import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
-export default function RegisterScreen() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [area, setArea] = useState("");
-  const [registered, setRegistered] = useState(false);
+import React from "react";
+import { Link } from "react-router-dom";
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setRegistered(true);
-  };
-
+export default function HomeScreen() {
   return (
-    <div className="min-h-screen bg-blue-50 flex items-center justify-center p-6">
-      <Card className="w-full max-w-md">
-        <CardContent>
-          <h1 className="text-2xl font-bold text-center mb-4">הרשמה לשקלון 📝</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 to-teal-100 p-6 animate-fadeIn transition-all duration-1000 ease-out">
+      {/* לוגו */}
+      <img
+        src="/logo.png"
+        alt="שקלון לוגו"
+        className="w-24 h-24 mb-4 animate-bounce"
+      />
 
-          {!registered ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                placeholder="שם מלא"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <Input
-                placeholder="מספר טלפון"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-              <Input
-                placeholder="אימייל (לא חובה)"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <Input
-                placeholder="שכונה / אזור מגורים"
-                value={area}
-                onChange={(e) => setArea(e.target.value)}
-                required
-              />
-              <Button className="w-full" type="submit">
-                הירשם ✅
-              </Button>
-            </form>
-          ) : (
-            <div className="text-center text-green-700 font-semibold">
-              ✅ נרשמת בהצלחה! ברוך הבא לשקלון 🌟
-            </div>
-          )}
-        </CardContent>
-      </Card>
+      {/* כותרת מרכזית */}
+      <h1 className="text-3xl font-extrabold text-blue-800 mb-2 text-center">
+        ברוכים הבאים לשקלון 💠
+      </h1>
+      <p className="text-gray-600 text-center mb-6">
+        הקהילה שלך, הערך שלך
+      </p>
+
+      {/* כפתורי ניווט */}
+      <div className="space-y-3 w-full max-w-xs">
+        <Link to="/register">
+          <button className="w-full bg-blue-600 text-white py-3 rounded-xl shadow hover:bg-blue-700 transition">
+            📝 הרשמה
+          </button>
+        </Link>
+        <Link to="/login">
+          <button className="w-full bg-green-600 text-white py-3 rounded-xl shadow hover:bg-green-700 transition">
+            🔐 כניסה
+          </button>
+        </Link>
+        <button className="w-full bg-yellow-500 text-white py-3 rounded-xl shadow hover:bg-yellow-600 transition">
+          🏪 עסקים
+        </button>
+        <button className="w-full bg-purple-600 text-white py-3 rounded-xl shadow hover:bg-purple-700 transition">
+          🤝 אזור קהילה
+        </button>
+      </div>
+
+      {/* טקסט משלים */}
+      <p className="mt-6 text-sm text-gray-700 text-center italic">
+        חזרו כל יום ותראו את ההשפעה שלכם – פרסים, סטטוסים, ואימפקט חברתי אמיתי ✨
+      </p>
     </div>
   );
 }
