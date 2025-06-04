@@ -1,11 +1,11 @@
-// App.jsx
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
-import RegisterScreen from "./screens/RegisterScreen";
-import LoginScreen from "./screens/LoginScreen";
-import BusinessesScreen from "./screens/BusinessesScreen";
-import CommunityScreen from "./screens/CommunityScreen";
+import HomeScreen from "./HomeScreen";
+import RegisterScreen from "./RegisterScreen";
+import LoginScreen from "./LoginScreen";
+import BusinessesScreen from "./BusinessesScreen";
+import CommunityScreen from "./CommunityScreen";
 
 export default function App() {
   return (
